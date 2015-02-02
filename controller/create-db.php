@@ -21,3 +21,6 @@ else{
     echo "Database has already been created";
     
 }
+
+$connection->close();
+        
