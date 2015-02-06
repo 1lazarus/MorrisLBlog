@@ -1,15 +1,15 @@
 <?php
-require_once ("../modle/database.php");
+require_once (__DIR__."/../model/database.php");
 $connection = new mysqli($host,$username,$password);
 
 if($connection->connect_error){
   die("Error:" . $connection->connect_error);  
 }
-$exists=$connection->select_db();
+$exists=$connection->select_db($database);
 
 
 
-$connection->close($databse);
+
 if($exists){
  $query = $connection->$query("CREATE DATABASE $databse");
  if($query){
@@ -26,6 +26,9 @@ $query = $connection->query("Create Table posts("
         . "title varchar (225) NOT NULL"
         . "post text NOT NULL"
         . "PRIMARY KEY (id)");
+if($query){
+    echo "Succesfully create table posts";
+}
         
 
 

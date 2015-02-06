@@ -3,5 +3,5 @@
 $host ="localhost";
 $username = "root";
 $password = "root";
-$databse = "blog_db=";
+$database = "blog_db=";
 
