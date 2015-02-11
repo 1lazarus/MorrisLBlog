@@ -1,6 +1,6 @@
 <?php
 
-$path = "/baezm-blog";
+$path = "/MorrisLBlog";
 
 $host = "localhost";
 $username = "root";
