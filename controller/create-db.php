@@ -16,29 +16,28 @@ if ($connection->connect_error) {
 $exists = $connection->select_db($database);
 
 
-
-
-if ($exists) {
-    $query = $connection->$query("CREATE DATABASE $databse");
+if (!$exists) {
+    $query = $connection->query("CREATE DATABASE $database");
    
     
     if ($query) {
-        echo"<p>Successfully created database:" . $databse . "<p/>";
+        echo"<p>Successfully created database:" . $database . "<p/>";
     }
 } 
-
 else {
     echo "<p>Database has already been created</p>";
 }
-$query = $connection->query("Create Table posts("
-        . "id int(11) NOT NULL AUTO_INCREMENT "
-        . "title varchar (225) NOT NULL"
-        . "post text NOT NULL"
-        . "PRIMARY KEY (id)");
+
+$query = $connection->query("CREATE TABLE posts("
+        . "id int(11) NOT NULL AUTO_INCREMENT,"
+        . "title varchar (225) NOT NULL,"
+        . "post text NOT NULL,"
+        . "PRIMARY KEY (id))");
+
 if ($query) {
     echo "<p>Succesfully create table posts</p>";
 } else {
-    echo" <p>$connection->error</P>";
+    echo" <p>sadfa$connection->error</P>";
 }
 
 
