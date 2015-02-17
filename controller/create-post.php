@@ -6,7 +6,7 @@
 $title = filter_input(INPUT_POST,"title", FILTER_SANITIZE_STRING);
 $post = filter_input(INPUT_POST, "post");
 
-$query = $connection->query("INSERT INTO posts SET title = '$title' , post =");
+$query = $connection->query("INSERT INTO posts SET title = '$title' , post ='$post'");
 if($query){
     echo "<p> Successfully inserted post: $title</p>";
 }
