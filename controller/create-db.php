@@ -14,9 +14,8 @@ $query = $connection->query("CREATE TABLE posts("
 if ($query) {
     echo "<p>Succesfully create table posts</p>";
 } else {
-    echo" <p>sadfa$connection->error</P>";
+    echo" <p>$connection->error</P>";
 }
 
 
 
-$connection->close();

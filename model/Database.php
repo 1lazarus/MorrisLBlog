@@ -7,6 +7,7 @@ class Database {
     private $username;
     private $password;
     private $database;
+    public  $error;
 
     public function __constructt($host, $username, $password, $database) {
         $this->host;
@@ -49,12 +50,21 @@ else {
 
     public function closeConnection() {
         if(isset ($this->connection)){
-            $this->connection->close;
+            $this->connection->close();
         }
     }
 
     public function query($string) {
+        $this->openConnection();
         
+        $query = $this->connection->query($string);
+        
+        if(!$query){
+            $this->error = $this->connection->error;
+        }
+        $this->closeConnection();
+        
+        return $query;
     }
 
 }
