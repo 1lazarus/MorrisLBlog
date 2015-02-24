@@ -1,8 +1,27 @@
 <?php
+require_once (__DIR__ . "/../model/config.php");
+?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
+
+
+
+<form method="post" action="<?php echo $path . "/controller/create-post.php";?>">
+    <div>
+        <label for="username">Username:</label>
+        <input type="username" name="username"/>
+            
+    </div>
+    <div>
+        <label for="post">Password:</label>
+        <input type="password" name="password"/>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+    
+</form>
+
+
 
