@@ -20,5 +20,6 @@ require_once (__DIR__."/../model/config.php");
     <div>
         <button type="submit">Submit</button>
     </div>
+    
 </form>
 
