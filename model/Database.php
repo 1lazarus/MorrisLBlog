@@ -7,38 +7,39 @@ class Database {
     private $username;
     private $password;
     private $database;
-    public  $error;
+    public $error;
 
-    public function __constructt($host, $username, $password, $database) {
+    public function __construct($host, $username, $password, $database) {
         $this->host;
         $this->username = $username;
         $this->password = $password;
         $this->database = $database;
-        
+
         $this->connection = new mysqli($host, $username, $password);
 
 
 
 
-if ($connection->connect_error) {
-    die("<p>Error:" . $this->connection->connect_error . "</p>");
-}
+        if ($this->connection->connect_error) {
+            die("<p>Error:" . $this->connection->connect_error . "</p>");
+        }
 
 
-$exists = $this->connection->select_db($database);
+        $exists = $this->connection->select_db($database);
 
 
-if (!$exists) {
-    $query = $this->connection->query("CREATE DATABASE $database");
-   
-    
-    if ($query) {
-        echo"<p>Successfully created database:" . $database . "<p/>";
-    }
-} 
-else {
-    echo "<p>Database has already been created</p>";
-}
+        if (!$exists) {
+            $query = $this->connection->query("CREATE DATABASE $database");
+
+
+            if ($query) {
+                echo"<p>Successfully created database:" . $database . "<p/>";
+            }else{
+                echo 'problems';
+            }
+        } else {
+            echo "<p>Database has already been created</p>";
+        }
     }
 
     public function openConnection() {
@@ -49,21 +50,21 @@ else {
     }
 
     public function closeConnection() {
-        if(isset ($this->connection)){
+        if (isset($this->connection)) {
             $this->connection->close();
         }
     }
 
     public function query($string) {
         $this->openConnection();
-        
+
         $query = $this->connection->query($string);
-        
-        if(!$query){
+
+        if (!$query) {
             $this->error = $this->connection->error;
         }
         $this->closeConnection();
-        
+
         return $query;
     }
 
