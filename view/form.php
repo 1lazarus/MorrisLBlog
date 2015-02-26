@@ -1,6 +1,11 @@
 <?php
-
+require_once (__DIR__."/../controller/login-verify.php");
 require_once (__DIR__."/../model/config.php");
+
+if(authenticateUsers()){
+    header("Location:" . $path . "index.php");
+    die();
+}
 ?>
 
 
@@ -13,10 +18,12 @@ require_once (__DIR__."/../model/config.php");
         <input type="text" name="title"/>
             
     </div>
+    
     <div>
         <label for="post">Post:</label>
         <textarea name="post"></textarea>
     </div>
+    
     <div>
         <button type="submit">Submit</button>
     </div>
