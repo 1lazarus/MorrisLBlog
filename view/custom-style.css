@@ -1,0 +1,30 @@
+body{
+    //where the jumbotron should be//
+    background-color: slateblue;
+    text-align: center;
+}
+
+.jumbotron{
+    //the picture of jumbotron and size
+    background-image: url(http://img.gettyimageslatam.com/public/userfiles/redesign/images/landing/home/img_entry_002.jpg);
+    margin-top: 20px; 
+           
+}
+jumbotron h1{
+    //shape  of jumbotron
+    color: windowframe;
+}
+
+.nav nav-tabs{
+    margin-top: 20px
+}
+
+.jumbotron p{
+    color:windowtext
+}
+
+nav{
+    padding-left:35;
+}
+
+

@@ -1,0 +1,47 @@
+div {
+    border-style: solid;
+    border-width: 5px; 
+    padding: 30px;
+  
+}
+.container {
+    border-color: red;
+}
+.row {
+    border-color: purple;
+}
+
+body {
+    
+    background-image: url("http://images.rapgenius.com/b82119f8b9f6372428b93864f9f78826.400x225x80.gif")
+   
+}
+
+ 
+
+
+#rosy{
+    
+}
+
+#mom{
+    background-image: url("http://www.thewallofchampions.com/wp-content/uploads/2012/11/2.gif")
+}
+
+#ball{
+     background-image: url("http://media.giphy.com/media/RQlcEono2t3oI/giphy.gif")
+}
+
+img {
+    width: 240px;
+    height: auto;
+}
+h1{
+color: red;
+}
+h2{
+color: red;
+}
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
